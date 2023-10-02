@@ -9,6 +9,7 @@ const userRoute = require("./routes/userRoute.js");
 const PORT = process.env.PORT || 3500;
 
 const server = express();
+server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true, limit: "2mb" }));
 server.use(ConnectDatabase);
 server.get("/", (req, res) => {
