@@ -1,6 +1,7 @@
-import config from "./config";
-
-export.firebaseConfig = {
+const config = require("./config");
+const firebase = require("firebase/app");
+const { getAuth } = require("firebase/auth");
+const firebaseConfig = {
 	apiKey: config.API_KEY,
 	authDomain: config.AUTH_DOMAIN,
 	projectId: config.PROJECT_ID,
@@ -10,3 +11,7 @@ export.firebaseConfig = {
 	measurementId: config.MEASUREMENT_ID,
 };
 
+const app = firebase.initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+module.exports = { auth };

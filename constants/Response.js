@@ -30,4 +30,17 @@ const NotFound = {
 	message: "Not Found : Data not found",
 };
 
-module.exports = { ServerError, DatabaseErrorResponse, SuccessResponse,ExistResponse,NotFound };
+const Unauthorized = {
+	success: false,
+	error: true,
+	message: "Unauthorized : Invalid email or password",
+};
+
+module.exports = {
+	ServerError,
+	DatabaseErrorResponse,
+	SuccessResponse,
+	ExistResponse,
+	NotFound,
+	Unauthorized,
+};
