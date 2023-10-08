@@ -36,6 +36,12 @@ const Unauthorized = {
 	message: "Unauthorized : Invalid email or password",
 };
 
+const UploadProfileErr = {
+	success: false,
+	error: true,
+	message: "Error : Profile not uploaded.",
+};
+
 module.exports = {
 	ServerError,
 	DatabaseErrorResponse,
@@ -43,4 +49,5 @@ module.exports = {
 	ExistResponse,
 	NotFound,
 	Unauthorized,
+	UploadProfileErr,
 };
