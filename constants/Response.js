@@ -30,4 +30,4 @@ const NotFound = {
 	message: "Not Found : Data not found",
 };
 
-module.exports = { ServerError, DatabaseErrorResponse, SuccessResponse,ExistResponse };
+module.exports = { ServerError, DatabaseErrorResponse, SuccessResponse,ExistResponse,NotFound };

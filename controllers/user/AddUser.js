@@ -1,14 +1,14 @@
-const SendVerifyLink = require("../SendMail/VerifySendMail");
+const SendVerifyLink = require("../../SendMail/VerifySendMail");
 const {
 	ServerError,
 	ExistResponse,
 	SuccessResponse,
-} = require("../constants/Response");
-const { ORIGIN } = require("../config");
-const { SERVER_ERROR, EXIST, CREATED } = require("../constants/Status");
-const FetchData = require("../libs/FetchData");
-const { GenerateHashPassword } = require("../libs/HashPassword");
-const userModel = require("../models/userModel");
+} = require("../../constants/Response");
+const { ORIGIN } = require("../../config");
+const { SERVER_ERROR, EXIST, CREATED } = require("../../constants/Status");
+const FetchData = require("../../libs/FetchData");
+const { GenerateHashPassword } = require("../../libs/HashPassword");
+const userModel = require("../../models/userModel");
 
 const AddUser = async (req, res) => {
 	const { email, username, password } = req.body;
