@@ -6,7 +6,6 @@ const LoginUser = require("../controllers/user/LoginUser");
 const GetProfile = require("../controllers/user/GetProfile");
 const UploadProfile = require("../controllers/user/uploadProfile");
 const VerifyUserToken = require("../controllers/user/VerifyUser");
-const UpdateUserProfile = require("../controllers/user/UpdateUserProfile");
 const { VerifyHeaderToken } = require("../middleware/HeaderMiddleware");
 
 userRoute.post("/login", LoginUser);
