@@ -1,16 +1,16 @@
 const nodemailer = require("nodemailer");
-const origin = process.env.ORIGIN_HOST;
+const { EMAIL_ID, EMAIL_PASSWORD } = require("../config");
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   secure:true,
   auth: {
-    user: process.env.EMAIL_ID,
-    pass: process.env.EMAIL_PASSWORD
+    user: EMAIL_ID,
+    pass: EMAIL_PASSWORD
   }
 });
 
-exports.UpdatePasswordLink = async (senderMail,Username, VerifyLink) => {
+exports.UpdatePasswordLink = async (clientMail,clientName, updateLink) => {
     const template = `
     <!DOCTYPE HTML
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -229,16 +229,16 @@ exports.UpdatePasswordLink = async (senderMail,Username, VerifyLink) => {
                                         <p style="line-height: 140%; font-size: 14px;"><span
                                             style="font-family: Raleway, sans-serif; font-size: 16px; line-height: 22.4px;"><strong>Hey
                                             <span
-                                                style="color: #3598db; line-height: 19.6px;">${Username}!</span></strong></span>
+                                                style="color: #3598db; line-height: 19.6px;">${clientName}!</span></strong></span>
                                         </p>
                                         <p style="line-height: 140%; font-size: 14px;"> </p>
                                         <p style="line-height: 140%; font-size: 14px;"><strong>Welcome to BlogSphere.</strong></p>
                                         <p style="line-height: 140%; font-size: 14px;"> </p>
                                         <p style="line-height: 140%; font-size: 14px;"><strong>For Exploring or Creating Awesome
-                                            , New Blog you need to Verify your Email-Id</strong></p>
+                                            , New Blog</strong></p>
                                         <p style="line-height: 140%; font-size: 14px;"> </p>
                                         <p style="line-height: 140%; font-size: 14px;"><strong>Click Here to Update Password :
-                                            <span style="color: #3598db; line-height: 19.6px;"><a href='${VerifyLink}'>Update Password</a></span></strong></p>
+                                            <span style="color: #3598db; line-height: 19.6px;"><a href='${updateLink}'>Update Password</a></span></strong></p>
                                         <p style="line-height: 140%; font-size: 14px;"> </p>
                                         <p style="line-height: 140%; font-size: 14px;"> </p>
                                         <p style="line-height: 140%; font-size: 14px;"><span
@@ -470,8 +470,8 @@ exports.UpdatePasswordLink = async (senderMail,Username, VerifyLink) => {
     `;
 
     var mailOptions = {
-        from: process.env.EMAIL_ID,
-        to: senderMail,
+        from: EMAIL_ID,
+        to: clientMail,
         subject: 'Update Password',
         html: template
     }
@@ -481,7 +481,7 @@ exports.UpdatePasswordLink = async (senderMail,Username, VerifyLink) => {
         return {
             success:true,
             error:false,
-            message:`Update link sended to ${data.email}`
+            message:`Update password link sended to ${clientMail}`
         }
     }catch(err){
         return {
