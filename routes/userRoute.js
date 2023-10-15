@@ -9,13 +9,24 @@ const VerifyHeaderToken = require("../middleware/HeaderMiddleware");
 const UpdateProfile = require("../controllers/user/UpdateProfile.js");
 const ForgetPassword = require("../controllers/user/ForgetPassword.js");
 const UpdatePassword = require("../controllers/user/UpdatePassword.js");
+const {
+	DeleteAccountRequest,
+	DeleteAccount,
+} = require("../controllers/user/DeleteAccount.js");
 
-userRoute.post("/login", LoginUser);
-userRoute.post("/create", AddUser);
-userRoute.put("/verify", VerifyUserToken);
-userRoute.get("/get-profile", VerifyHeaderToken, GetProfile);
-userRoute.put("/update-profile", VerifyHeaderToken, UpdateProfile);
-userRoute.put("/forget-password", ForgetPassword);
-userRoute.put('/update-password',UpdatePassword)
+userRoute.get("/get-profile", VerifyHeaderToken, GetProfile); //* Done
+
+userRoute.post("/login", LoginUser); //* Done
+userRoute.post("/create", AddUser); //* Done
+userRoute.put("/verify", VerifyUserToken); //* Done
+userRoute.put("/forget-password", ForgetPassword); //* Done
+userRoute.put("/update-password", UpdatePassword); //* Done
+
+userRoute.delete("/delete-account", DeleteAccount); //* Done
+userRoute.delete(
+	"/delete-account-request",
+	VerifyHeaderToken,
+	DeleteAccountRequest
+); //*Done
 
 module.exports = userRoute;
