@@ -7,40 +7,40 @@
 ```bash
 .
 |── constants
-|		|── Response.js
-|		|── Status.js
+|	|── Response.js
+|	|── Status.js
 |
 |── controllers
-|		|── blog
-|		|── user
-|			|── AddUser.js
-|			|── ForgetPassword.js
-|			|── GetProfile.js
-|			|── LoginUser.js
-|			|── UpdatePassword.js
-|			|── UpdateProfile.js
-|			|── VerifyUser.js
+|	|── blog
+|	|── user
+|		|── AddUser.js
+|		|── ForgetPassword.js
+|		|── GetProfile.js
+|		|── LoginUser.js
+|		|── UpdatePassword.js
+|		|── UpdateProfile.js
+|		|── VerifyUser.js
 |
 |── libs
-|		|── FetchData.js
-|		|── HashPassword.js
-|		|── JwtToken.js
-|		|── UploadImage.js
+|	|── FetchData.js
+|	|── HashPassword.js
+|	|── JwtToken.js
+|	|── UploadImage.js
 |
 |── middleware
-|		|── ConnectDB.js
-|		|── HeaderMiddleware.js
-|		|── multer.js
+|	|── ConnectDB.js
+|	|── HeaderMiddleware.js
+|	|── multer.js
 |
 |── models
-|		|── userModel.js
+|	|── userModel.js
 |
 |── routes
-|		|── userRoute.js
+|	|── userRoute.js
 |
 |── SendMail
-|		|── UpdateSendLink.js
-|		|── VerifySendMail.js
+|	|── UpdateSendLink.js
+|	|── VerifySendMail.js
 |
 |── .gitignore
 |── config.js
@@ -59,7 +59,7 @@ This is UserRoute for Adding, Update, and Deleting User account
 
 ### Post [/user/create]()
 
-- [x] This route add a new user if user does not exists.if user already exists then thorw response message 
+-   [x] This route add a new user if user does not exists.if user already exists then thorw response message
 
 ### Required Body Data :
 
@@ -81,10 +81,4 @@ This is UserRoute for Adding, Update, and Deleting User account
 
 ## [Comment Routes]() ( /comment )
 
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
+-   [x] done
