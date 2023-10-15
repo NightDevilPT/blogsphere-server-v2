@@ -8,7 +8,7 @@ const {
 const { auth } = require("../firebaseconfig");
 const path = require("path");
 
-const UploadImageToFirebase = async (file,path) => {
+const UploadImageToFirebase = async (file, path) => {
 	const storage = getStorage();
 	const fileName = `${path}`;
 	const storageRef = ref(storage, fileName);
@@ -28,4 +28,4 @@ const UploadImageToFirebase = async (file,path) => {
 	}
 };
 
-module.exports = { UploadImageToFirebase };
+module.exports = UploadImageToFirebase;

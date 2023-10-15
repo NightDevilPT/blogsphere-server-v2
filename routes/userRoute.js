@@ -4,7 +4,6 @@ const UploadMiddleware = require("../middleware/multer.js");
 const AddUser = require("../controllers/user/AddUser");
 const LoginUser = require("../controllers/user/LoginUser");
 const GetProfile = require("../controllers/user/GetProfile");
-const UploadProfile = require("../controllers/user/uploadProfile");
 const VerifyUserToken = require("../controllers/user/VerifyUser");
 const VerifyHeaderToken = require("../middleware/HeaderMiddleware");
 const UpdateProfile = require("../controllers/user/UpdateProfile.js");
