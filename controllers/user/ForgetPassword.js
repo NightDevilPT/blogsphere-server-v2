@@ -26,6 +26,7 @@ const ForgetPassword = async (req, res) => {
 		);
 
 		return res.status(SUCCESS).json(updateMail);
+		
 	} catch (err) {
 		console.log(err);
 		return res.status(SERVER_ERROR).json(ServerError);
