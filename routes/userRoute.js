@@ -6,17 +6,13 @@ const LoginUser = require("../controllers/user/LoginUser");
 const GetProfile = require("../controllers/user/GetProfile");
 const UploadProfile = require("../controllers/user/uploadProfile");
 const VerifyUserToken = require("../controllers/user/VerifyUser");
-const { VerifyHeaderToken } = require("../middleware/HeaderMiddleware");
+const VerifyHeaderToken = require("../middleware/HeaderMiddleware");
+const UpdateProfile = require("../controllers/user/UpdateProfile.js");
 
 userRoute.post("/login", LoginUser);
 userRoute.post("/create", AddUser);
 userRoute.put("/verify", VerifyUserToken);
 userRoute.get("/get-profile", VerifyHeaderToken, GetProfile);
-userRoute.put(
-	"/upload-profile",
-	UploadMiddleware.single("avtar"),
-	VerifyHeaderToken,
-	UploadProfile
-);
+userRoute.put("/update-profile", VerifyHeaderToken, UpdateProfile);
 
 module.exports = userRoute;
