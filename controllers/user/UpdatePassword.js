@@ -1,7 +1,7 @@
 const Status = require("../../constants/Status");
 const Response = require("../../constants/Response");
 const userModel = require("../../models/userModel");
-const { GenerateHashPassword } = require("../../libs/HashPassword");
+const { GenerateHashPassword } = require("../../services/HashPassword");
 
 const UpdatePassword = async (req, res) => {
 	const { token } = req.query;
@@ -29,4 +29,4 @@ const UpdatePassword = async (req, res) => {
 	}
 };
 
-module.exports = UpdatePassword
+module.exports = UpdatePassword;

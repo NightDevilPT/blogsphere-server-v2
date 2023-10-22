@@ -2,7 +2,7 @@ const { UpdatePasswordLink } = require("../../SendMail/UpdateSendLink");
 const { ORIGIN } = require("../../config");
 const { NotFound, ServerError } = require("../../constants/Response");
 const { NOT_FOUND, SERVER_ERROR, SUCCESS } = require("../../constants/Status");
-const { GenerateHashPassword } = require("../../libs/HashPassword");
+const { GenerateHashPassword } = require("../../services/HashPassword");
 const userModel = require("../../models/userModel");
 
 const ForgetPassword = async (req, res) => {
@@ -26,7 +26,6 @@ const ForgetPassword = async (req, res) => {
 		);
 
 		return res.status(SUCCESS).json(updateMail);
-		
 	} catch (err) {
 		console.log(err);
 		return res.status(SERVER_ERROR).json(ServerError);

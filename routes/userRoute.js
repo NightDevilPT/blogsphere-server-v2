@@ -15,13 +15,12 @@ const {
 } = require("../controllers/user/DeleteAccount.js");
 
 userRoute.get("/get-profile", VerifyHeaderToken, GetProfile); //* Done
-
 userRoute.post("/login", LoginUser); //* Done
 userRoute.post("/create", AddUser); //* Done
+userRoute.put("/update", VerifyHeaderToken, UpdateProfile); // * Done
 userRoute.put("/verify", VerifyUserToken); //* Done
 userRoute.put("/forget-password", ForgetPassword); //* Done
 userRoute.put("/update-password", UpdatePassword); //* Done
-
 userRoute.delete("/delete-account", DeleteAccount); //* Done
 userRoute.delete(
 	"/delete-account-request",

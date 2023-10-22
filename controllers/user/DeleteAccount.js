@@ -1,7 +1,7 @@
 const Status = require("../../constants/Status");
 const Response = require("../../constants/Response");
 const userModel = require("../../models/userModel");
-const { GenerateHashPassword } = require("../../libs/HashPassword");
+const { GenerateHashPassword } = require("../../services/HashPassword");
 const { DeleteAccountMail } = require("../../SendMail/DeleteSendMail");
 const { ORIGIN } = require("../../config");
 

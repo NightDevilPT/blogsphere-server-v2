@@ -10,8 +10,8 @@ const {
 	UNAUTHORIZED,
 	SUCCESS,
 } = require("../../constants/Status");
-const { VerifyHashPassword } = require("../../libs/HashPassword");
-const { GenerateToken } = require("../../libs/JwtToken");
+const { VerifyHashPassword } = require("../../services/HashPassword");
+const { GenerateToken } = require("../../services/JwtToken");
 const userModel = require("../../models/userModel");
 
 const LoginUser = async (req, res) => {

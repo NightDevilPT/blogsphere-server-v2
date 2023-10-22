@@ -8,9 +8,9 @@ const {
 const { auth } = require("../firebaseconfig");
 const path = require("path");
 
-const UploadImageToFirebase = async (file, path) => {
+const UploadImageToFirebase = async (file, path_filename) => {
 	const storage = getStorage();
-	const fileName = `${path}`;
+	const fileName = `${path_filename}`;
 	const storageRef = ref(storage, fileName);
 	const metaData = {
 		contentType: file.type,

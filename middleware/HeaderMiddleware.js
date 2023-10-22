@@ -1,5 +1,5 @@
 const { UNAUTHORIZED } = require("../constants/Status");
-const { VerifyToken } = require("../libs/JwtToken");
+const { VerifyToken } = require("../services/JwtToken");
 
 const VerifyHeaderToken = async (req, res, next) => {
 	const token = req.headers.authorization;
@@ -25,4 +25,4 @@ const VerifyHeaderToken = async (req, res, next) => {
 	next();
 };
 
-module.exports = VerifyHeaderToken
+module.exports = VerifyHeaderToken;
