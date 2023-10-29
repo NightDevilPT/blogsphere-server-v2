@@ -13,8 +13,10 @@ const {
 	DeleteAccountRequest,
 	DeleteAccount,
 } = require("../controllers/user/DeleteAccount.js");
+const FetchUsers = require("../controllers/user/FetchUsers.js");
 
 userRoute.get("/get-profile", VerifyHeaderToken, GetProfile); //* Done
+userRoute.get("/", FetchUsers);
 userRoute.post("/login", LoginUser); //* Done
 userRoute.post("/create", AddUser); //* Done
 userRoute.put("/update", VerifyHeaderToken, UpdateProfile); // * Done

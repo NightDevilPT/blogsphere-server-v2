@@ -1,5 +1,9 @@
-const { NotFound, SuccessResponse } = require("../../constants/Response");
-const { NOT_FOUND, SUCCESS } = require("../../constants/Status");
+const {
+	NotFound,
+	SuccessResponse,
+	ServerError,
+} = require("../../constants/Response");
+const { NOT_FOUND, SUCCESS, SERVER_ERROR } = require("../../constants/Status");
 const userModel = require("../../models/userModel");
 
 const UpdateProfile = async (req, res) => {
@@ -17,7 +21,7 @@ const UpdateProfile = async (req, res) => {
 			.status(SUCCESS)
 			.json(SuccessResponse("Profile successfully updated."));
 	} catch (err) {
-		return res.send(err);
+		return res.status(SERVER_ERROR).json(ServerError);
 	}
 };
 

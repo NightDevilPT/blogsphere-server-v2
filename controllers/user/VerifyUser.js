@@ -7,6 +7,10 @@ const { SERVER_ERROR, SUCCESS, NOT_FOUND } = require("../../constants/Status");
 const userModel = require("../../models/userModel");
 
 const VerifyUserToken = async (req, res) => {
+	const { token } = req.query;
+	if (!token) {
+		return res.status(NOT_FOUND).json(NotFound);
+	}
 	try {
 		const { token } = req.query;
 		const findUser = await userModel.findOneAndUpdate(
