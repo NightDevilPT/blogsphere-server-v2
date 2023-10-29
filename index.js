@@ -5,6 +5,7 @@ const { ConnectDatabase } = require("./middleware/ConnectDB.js");
 const { SUCCESS } = require("./constants/Status.js");
 const { SuccessResponse } = require("./constants/Response.js");
 const userRoute = require("./routes/userRoute.js");
+const blogRoute = require("./routes/blogRoute.js");
 
 const PORT = process.env.PORT || 3500;
 
@@ -16,6 +17,7 @@ server.get("/", (req, res) => {
 	return res.status(SUCCESS).json(SuccessResponse("Welcome to BlogSphere"));
 });
 
+server.use("/blog", blogRoute);
 server.use("/user", userRoute);
 
 server.listen(PORT, () => {
