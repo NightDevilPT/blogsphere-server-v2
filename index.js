@@ -8,9 +8,13 @@ const userRoute = require("./routes/userRoute.js");
 const blogRoute = require("./routes/blogRoute.js");
 
 const PORT = process.env.PORT || 3500;
-
+const corsOptions = {
+	origin: ['http://localhost:3000'],
+	methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
+  };
+  
 const server = express();
-app.use(cors());
+app.use(cors(corsOptions));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true, limit: "2mb" }));
 server.use(ConnectDatabase);
