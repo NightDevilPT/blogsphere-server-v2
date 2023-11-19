@@ -10,6 +10,7 @@ const blogRoute = require("./routes/blogRoute.js");
 const PORT = process.env.PORT || 3500;
 
 const server = express();
+app.use(cors());
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true, limit: "2mb" }));
 server.use(ConnectDatabase);
