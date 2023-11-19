@@ -14,7 +14,7 @@ const corsOptions = {
   };
   
 const server = express();
-app.use(cors(corsOptions));
+server.use(cors(corsOptions));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true, limit: "2mb" }));
 server.use(ConnectDatabase);
