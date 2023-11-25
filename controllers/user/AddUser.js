@@ -27,7 +27,7 @@ const AddUser = async (req, res) => {
 		const sendMail = await SendVerifyLink(
 			email,
 			username,
-			`${ORIGIN}?token=${token}`
+			`${ORIGIN}/auth/verify?token=${token}`
 		);
 		return res.status(CREATED).json(sendMail);
 	} catch (err) {
