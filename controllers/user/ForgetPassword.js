@@ -22,7 +22,7 @@ const ForgetPassword = async (req, res) => {
 		const updateMail = await UpdatePasswordLink(
 			findUser.email,
 			findUser.username,
-			`${ORIGIN}?token=${token}`
+			`${ORIGIN}/auth/update-password?token=${token}`
 		);
 
 		return res.status(SUCCESS).json(updateMail);
